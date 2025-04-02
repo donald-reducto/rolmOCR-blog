@@ -30,7 +30,7 @@ Across a variety of test documents, **RolmOCR showed either improved or equivale
   <img src="assets/test_2_olm_example.png" style="width:400px;" />
 </p>
 
-Using the same handwritten note example featured on the olmOCR site, RolmOCR produces more accurate results. It correctly captures characters that were previously misread due to corrupted metadata (for instance, “OCLM” is now correctly recognized as “DCLM”). Additionally, it preserves the correct reading order — such as placing “Deepseek Coder” under the appropriate “Data Mixes” section. These details make big differences in terms of downstream parsing and comprehension.
+Using the same handwritten note example featured on the olmOCR site, RolmOCR produces more accurate results. It correctly captures characters that were previously misread potentially due to corrupted metadata (for instance, “OCLM” is now correctly recognized as “DCLM”). Additionally, it preserves the correct reading order — such as placing “Deepseek Coder” under the appropriate “Data Mixes” section. These details make big differences in terms of downstream parsing and comprehension.
 
 ### Example 2: Scanned Envelope 
 
@@ -38,7 +38,7 @@ Using the same handwritten note example featured on the olmOCR site, RolmOCR pro
   <img src="assets/test_1.jpg" style="width:800px;" />
 </p>
 
-In this case, RolmOCR is able to correctly extract the information from this low-contrast image, while olmOCR does not capture any of the information. This is likely due to the base model’s reliance on metadata in its training set - there is none available for this image, in this case. 
+In this case, RolmOCR is able to correctly extract the information from this low-contrast image, while olmOCR does not capture any of the information. This is likely due to a combination of QWen2.5VL's increased capability, and olmOCR's usage on metadata in its training set - there is none available for this image, in this case. 
 
 ### Example 3: Academic Paper 
 
@@ -50,7 +50,7 @@ This is an example where RolmOCR makes a mistake. It omits a subtitle found in a
 
 ## Try RolmOCR
 
-We’re releasing RolmOCR on Hugging Face under an open-source license. You can find instructions, example code, and model details in the README linked here. We’re excited to share RolmOCR with the open source community and hope it’s a useful tool for anyone working with PDFs or complex document layouts.
+We're releasing it under the Apache 2.0 license for anyone to try out, explore, or build on. You can find instructions, example code, and model details in the README linked here. We’re excited to share RolmOCR with the open source community and hope it’s a useful tool for anyone working with PDFs or complex document layouts.
 
 While RolmOCR is a strong general-purpose option, our own systems support more advanced capabilities — including non-English inputs, layout-aware parsing, and bounding boxes — for teams with more specialized needs.
 
