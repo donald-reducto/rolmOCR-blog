@@ -1,10 +1,10 @@
-# Introducing RolmOCR: A Faster, Lighter Open Source OCR Model
+# Introducing RolmOCR: A Faster, Lighter Open Source OCR Model for Documents
 
 Earlier this year, the [Allen Institute for AI](https://allenai.org/) released olmOCR, an open-source document OCR model built from a large-scale open dataset and the Qwen2-VL-7B Vision Language Model (VLM). We were excited to see a high-quality, openly available approach to parsing PDFs and other complex documents — and curious to explore what else might be possible using newer foundation models and some lightweight optimizations.
 
 The result is **RolmOCR**, a drop-in alternative to olmOCR that’s faster, uses less memory, and still performs well on a variety of document types. We're releasing it open source for anyone to try out, explore, or build on.
 
-## Key changes
+## Key changes: olmOCR → RolmOCR
 
 <p align="center">
   <img src="assets/architecture.png" style="width:1000px;" />
@@ -13,18 +13,24 @@ The result is **RolmOCR**, a drop-in alternative to olmOCR that’s faster, uses
 
 We made three notable changes: 
 
-1. **New Base Model**: We swapped in a more recent version of the existing model (Qwen2.5-VL-7B) as the foundation.
+1. **New base model**
 
-2. **No Metadata inputs**: Unlike the original, we don’t use metadata extracted from PDFs. This significantly reduces prompt length, which in turn lowers both processing time and VRAM usage — without hurting accuracy in most cases. 
+We swapped in a more recent version of the existing model (Qwen2.5-VL-7B) as the foundation.
 
-3. **Rotation of training data:** About 15% of the training data was rotated to enhance robustness to off-angle documents. We otherwise use the same training set. 
+2. **No metadata inputs**
+   
+Unlike the original, we don’t use metadata extracted from PDFs. This significantly reduces prompt length, which in turn lowers both processing time and VRAM usage — without hurting accuracy in most cases. 
 
-## Model comparisons
+3. **Rotation of training data**
+
+About 15% of the training data was rotated to enhance robustness to off-angle documents. We otherwise use the same training set. 
+
+## Model comparison: Speed vs. performance tradeoffs
 
 Across a variety of test documents, **RolmOCR showed either improved or equivalent OCR performance** compared to olmOCR — with much faster inference and lower memory consumption. However, in some select cases, RolmOCR did worse. Below are a few examples comparing model outputs.
 
 
-### Example 1: Handwritten note
+### Example 1: Handwritten note with annotations
 
 <p align="center">
   <img src="assets/Example_1.png" style="width:1000;" />
@@ -32,7 +38,7 @@ Across a variety of test documents, **RolmOCR showed either improved or equivale
 
 Using the same handwritten note example featured on the olmOCR site, RolmOCR produces more accurate results. It correctly captures characters that were previously misread potentially due to corrupted metadata (for instance, “OCLM” is now correctly recognized as “DCLM”). Additionally, it preserves the correct reading order — such as placing “Deepseek Coder” under the appropriate “Data Mixes” section. These details make big differences in terms of downstream parsing and comprehension.
 
-### Example 2: Scanned Envelope 
+### Example 2: Scanned envelope with handwriting and printed text in French and English 
 
 <p align="center">
   <img src="assets/Example_2.png" style="width:1000px;" />
@@ -40,7 +46,7 @@ Using the same handwritten note example featured on the olmOCR site, RolmOCR pro
 
 In this case, RolmOCR is able to correctly extract most of the information from this low-contrast image but misses some of the smaller text in the bottom left. When testing olmOCR, much of the ordering and some content is missed, and in many cases of running the model, no output is given at all. These results are likely due to a combination of QWen2.5VL's increased capability, and olmOCR's usage on metadata in its training set - there is none available for this particular image.
 
-### Example 3: Academic Paper 
+### Example 3: Academic paper written in LaTeX with a borderless table
 
 <p align="center">
   <img src="assets/Example_3.png" style="width:1000px;" />
@@ -54,4 +60,4 @@ We're releasing it under the Apache 2.0 license for anyone to try out, explore, 
 
 While RolmOCR is a strong general-purpose option, our own systems support more advanced capabilities — including non-English inputs, layout-aware parsing, and bounding boxes — for teams with more specialized needs.
 
-If you’re curious about those directions or have feedback on the model, we’d love to hear from you! 
+If you’re curious about those directions or have feedback on the model, we’d love to hear from you! Feel free to email us at founders@reducto.ai.
