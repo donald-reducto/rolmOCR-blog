@@ -60,4 +60,4 @@ We're releasing it under the Apache 2.0 license for anyone to try out, explore, 
 
 While RolmOCR is a strong general-purpose option, our own systems support more advanced capabilities — including non-English inputs, layout-aware parsing, and bounding boxes — for teams with more specialized needs.
 
-If you’re curious about those directions or have feedback on the model, we’d love to hear from you! Feel free to email us at founders@reducto.ai.
+If you have feedback on the model, we’d love to hear from you! Feel free to email us at founders@reducto.ai.
