@@ -1,8 +1,8 @@
 # Introducing RolmOCR: A Faster, Lighter Open Source OCR Model for Documents
 
-Earlier this year, the [Allen Institute for AI](https://allenai.org/) released olmOCR, an open-source document OCR model built from a large-scale open dataset and the Qwen2-VL-7B Vision Language Model (VLM). We were excited to see a high-quality, openly available approach to parsing PDFs and other complex documents — and curious to explore what else might be possible using newer foundation models and some lightweight optimizations.
+Earlier this year, the <a href="https://allenai.org/" target="_blank" rel="noopener noreferrer">Allen Institute for AI</a> released olmOCR, an open-source document OCR model built from a large-scale open dataset and the Qwen2-VL-7B Vision Language Model (VLM). We were excited to see a high-quality, openly available approach to parsing PDFs and other complex documents — and curious to explore what else might be possible using newer foundation models and some lightweight optimizations.
 
-The result is **RolmOCR**, a drop-in alternative to olmOCR that’s faster, uses less memory, and still performs well on a variety of document types. We're releasing it open source for anyone to try out, explore, or build on.
+The result is <a href="https://huggingface.co/reducto/RolmOCR" target="_blank" rel="noopener noreferrer"><strong>RolmOCR</strong></a>, a drop-in alternative to olmOCR that’s faster, uses less memory, and still performs well on a variety of document types. We're releasing it open source for anyone to try out, explore, or build on.
 
 ## Key changes: olmOCR → RolmOCR
 
@@ -56,7 +56,7 @@ This is an example where RolmOCR makes a mistake: it completely omits a subtitle
 
 ## Try RolmOCR
 
-We're releasing it under the Apache 2.0 license for anyone to try out, explore, or build on. You can find instructions, example code, and model details in the README [linked here](https://huggingface.co/reducto/RolmOCR). We’re excited to share RolmOCR with the open source community and hope it’s a useful tool for anyone working with PDFs or complex document layouts.
+We're releasing it under the Apache 2.0 license for anyone to try out, explore, or build on. You can find instructions, example code, and model details in the README <a href="https://huggingface.co/reducto/RolmOCR" target="_blank" rel="noopener noreferrer">linked here</a>. We’re excited to share RolmOCR with the open source community and hope it’s a useful tool for anyone working with PDFs or complex document layouts.
 
 While RolmOCR is a strong general-purpose option, our own systems support more advanced capabilities — including non-English inputs, layout-aware parsing, and bounding boxes — for teams with more specialized needs.
 
