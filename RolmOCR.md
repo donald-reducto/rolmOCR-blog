@@ -1,6 +1,6 @@
 # Introducing RolmOCR: A Faster, Lighter Open Source OCR Model
 
-Earlier this year, the [Allen Institute for AI](https://allenai.org/) released olmOCR, an open-source tool that performs document OCR using the Qwen2-VL-7B vision language model (VLM). We were excited to see a high-quality, openly available approach to parsing PDFs and other complex documents — and curious to explore what else might be possible using newer foundation models and some lightweight optimizations.
+Earlier this year, the [Allen Institute for AI](https://allenai.org/) released olmOCR, an open-source document OCR model built from a large-scale open dataset and the Qwen2-VL-7B Vision Language Model (VLM). We were excited to see a high-quality, openly available approach to parsing PDFs and other complex documents — and curious to explore what else might be possible using newer foundation models and some lightweight optimizations.
 
 The result is **RolmOCR**, a drop-in alternative to olmOCR that’s faster, uses less memory, and still performs well on a variety of document types. We're releasing it open source for anyone to try out, explore, or build on.
 
