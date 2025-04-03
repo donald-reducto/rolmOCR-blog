@@ -7,7 +7,7 @@ The result is **RolmOCR**, a drop-in alternative to olmOCR that’s faster, uses
 ## Key changes
 
 <p align="center">
-  <img src="assets/architecture.png" style="width:800px;" />
+  <img src="assets/architecture.png" style="width:1000px;" />
 </p>
 
 
@@ -27,7 +27,7 @@ Across a variety of test documents, **RolmOCR showed either improved or equivale
 ### Example 1: Handwritten note
 
 <p align="center">
-  <img src="assets/test_2_olm_example.png" style="width:400px;" />
+  <img src="assets/Example_1.png" style="width:1000;" />
 </p>
 
 Using the same handwritten note example featured on the olmOCR site, RolmOCR produces more accurate results. It correctly captures characters that were previously misread potentially due to corrupted metadata (for instance, “OCLM” is now correctly recognized as “DCLM”). Additionally, it preserves the correct reading order — such as placing “Deepseek Coder” under the appropriate “Data Mixes” section. These details make big differences in terms of downstream parsing and comprehension.
@@ -35,18 +35,18 @@ Using the same handwritten note example featured on the olmOCR site, RolmOCR pro
 ### Example 2: Scanned Envelope 
 
 <p align="center">
-  <img src="assets/test_1.jpg" style="width:800px;" />
+  <img src="assets/Example_2.png" style="width:1000px;" />
 </p>
 
-In this case, RolmOCR is able to correctly extract the information from this low-contrast image, while olmOCR does not capture any of the information. This is likely due to a combination of QWen2.5VL's increased capability, and olmOCR's usage on metadata in its training set - there is none available for this image, in this case. 
+In this case, RolmOCR is able to correctly extract most of the information from this low-contrast image but misses some of the smaller text in the bottom left. When testing olmOCR, much of the ordering and some content is missed, and in many cases of running the model, no output is given at all. These results are likely due to a combination of QWen2.5VL's increased capability, and olmOCR's usage on metadata in its training set - there is none available for this particular image.
 
 ### Example 3: Academic Paper 
 
 <p align="center">
-  <img src="assets/test_3_olm_better.png" style="width:600px;" />
+  <img src="assets/Example_3.png" style="width:1000px;" />
 </p>
 
-This is an example where RolmOCR makes a mistake. It omits a subtitle found in a table of an academic paper. These elements are successfully extracted by olmOCR, which benefits from structured metadata embedded in the document. This highlights one tradeoff of our metadata-free approach: when metadata is present and accurate, it can provide valuable context that improves extraction — especially for structured fields like headers.
+This is an example where RolmOCR makes a mistake: it completely omits a subtitle found in a table of an academic paper. These elements are successfully extracted by olmOCR, which benefits from structured metadata embedded in the document. This highlights one tradeoff of our metadata-free approach: when metadata is present and accurate, it can provide valuable context that improves extraction — especially for structured fields like headers.
 
 ## Try RolmOCR
 
